@@ -139,9 +139,41 @@ class ConeheadZombie extends Zombie {
         if (!ConeheadZombie.image) {
             ConeheadZombie.image = new Image();
             ConeheadZombie.image.src = './images/RoadblockZombie.png'; // 路障僵尸图片路径
+
+            ConeheadZombie.imageFailed = false; // 静态标志，是否加载失败
+
+            ConeheadZombie.image.onerror = () => {
+                console.error('路障僵尸图片加载失败');
+                ConeheadZombie.imageFailed = true;
+            };
         }
 
         this.img = ConeheadZombie.image;
+    }
+
+    // 重写绘制方法，支持加载失败绘制
+    draw(ctx) {
+        if (this.isDead) return;
+
+        if (ConeheadZombie.imageFailed) {
+            // 图片加载失败，绘制简易替代图形
+            ctx.fillStyle = 'darkorange';
+            ctx.fillRect(this.x, this.y - this.height, this.width, this.height);
+
+            ctx.fillStyle = 'white';
+            ctx.font = '14px Arial';
+            ctx.fillText('路障图片加载失败', this.x + 5, this.y - this.height + this.height / 2);
+        } else if (this.img && this.img.complete && this.img.naturalWidth !== 0) {
+            ctx.drawImage(this.img, this.x, this.y - this.height, this.width, this.height);
+        } else {
+            // 图片还在加载中
+            ctx.fillStyle = 'lightgray';
+            ctx.fillRect(this.x, this.y - this.height, this.width, this.height);
+
+            ctx.fillStyle = 'black';
+            ctx.font = '14px Arial';
+            ctx.fillText('加载中...', this.x + 20, this.y - this.height + this.height / 2);
+        }
     }
 }
 
@@ -160,9 +192,37 @@ class BucketheadZombie extends Zombie {
         if (!BucketheadZombie.image) {
             BucketheadZombie.image = new Image();
             BucketheadZombie.image.src = './images/IronBucketZombie.png'; // 替换为实际路径
+            BucketheadZombie.imageFailed = false;
+            BucketheadZombie.image.onerror = () => {
+                console.error('铁桶僵尸图片加载失败');
+                BucketheadZombie.imageFailed = true;
+            }
         }
 
         this.img = BucketheadZombie.image;
+    }
+
+    // 覆写 draw 方法，支持失败绘制
+    draw(ctx) {
+        if (this.isDead) return;
+
+        if (BucketheadZombie.imageFailed) {
+            // 图片加载失败，画灰色矩形代替
+            ctx.fillStyle = 'gray';
+            ctx.fillRect(this.x, this.y - this.height, this.width, this.height);
+            ctx.fillStyle = 'white';
+            ctx.font = '14px Arial';
+            ctx.fillText('铁桶僵尸图片加载失败', this.x + 5, this.y - this.height + this.height / 2);
+        } else if (this.img && this.img.complete && this.img.naturalWidth !== 0) {
+            ctx.drawImage(this.img, this.x, this.y - this.height, this.width, this.height);
+        } else {
+            // 图片还没加载完成
+            ctx.fillStyle = 'lightgray';
+            ctx.fillRect(this.x, this.y - this.height, this.width, this.height);
+            ctx.fillStyle = 'black';
+            ctx.font = '14px Arial';
+            ctx.fillText('加载中...', this.x + 20, this.y - this.height + this.height / 2);
+        }
     }
 
 }

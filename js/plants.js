@@ -98,9 +98,12 @@ class PeaShooter {
     if (PeaShooter.image.complete) {
       ctx.drawImage(PeaShooter.image, this.x, this.y - 60, 60, 80); // 控制位置和大小
     } else {
-      // 如果图片未加载完成，用默认矩形代替
-      ctx.fillStyle = 'green';
-      ctx.fillRect(this.x, this.y - 60, 40, 60);
+       // 图片未加载或加载失败时绘制替代图形
+       ctx.fillStyle = 'green';
+       ctx.fillRect(this.x, this.y - 60, 40, 60);
+       ctx.fillStyle = 'white';
+       ctx.font = '12px Arial';
+       ctx.fillText('加载失败', this.x + 5, this.y - 30);
     }
   }
 }
@@ -165,6 +168,9 @@ class Sunflower {
     } else {
       ctx.fillStyle = 'orange';
       ctx.fillRect(this.x, this.y - 60, 40, 60);
+      ctx.fillStyle = 'white';
+      ctx.font = '12px Arial';
+      ctx.fillText('加载失败', this.x + 5, this.y - 30);
     }
   }
 }
@@ -329,8 +335,13 @@ class IcePeaShooter extends PeaShooter {
     if (this.image.complete && this.image.naturalWidth !== 0) {
       ctx.drawImage(this.image, this.x, this.y - 60, 60, 80);
     } else {
+      // 加载失败或未完成，绘制替代图形
       ctx.fillStyle = '#00BFFF';
       ctx.fillRect(this.x, this.y - 60, 40, 60);
+
+      ctx.fillStyle = 'white';
+      ctx.font = '12px Arial';
+      ctx.fillText('加载失败', this.x + 5, this.y - 30);
     }
   }
 }
@@ -383,8 +394,11 @@ class MelonShooter extends PeaShooter {
     if (MelonShooter.image.complete) {
       ctx.drawImage(MelonShooter.image, this.x, this.y - 60, 60, 80);
     } else {
-      ctx.fillStyle = 'green';
-      ctx.fillRect(this.x, this.y - 60, 40, 60);
+      ctx.fillStyle = 'red';
+      ctx.fillRect(this.x + 10, this.y + 10, this.width, this.height);
+      ctx.fillStyle = 'white';
+      ctx.font = '12px Arial';
+      ctx.fillText('加载失败', this.x + 15, this.y + 50);
     }
   }
 }
