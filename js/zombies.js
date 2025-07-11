@@ -31,7 +31,7 @@ class Zombie {
     loadImage() {
         const img = new Image();
         // 图片路径 - 根据实际项目结构调整
-        img.src = '../images/zombie/basicZombee.png';
+        img.src = './images/basicZombee.png';
         // 图片加载失败处理
         img.onerror = () => {
             console.error('Failed to load car image');
@@ -138,7 +138,7 @@ class ConeheadZombie extends Zombie {
         // 路障图片
         if (!ConeheadZombie.image) {
             ConeheadZombie.image = new Image();
-            ConeheadZombie.image.src = '../images/zombie/RoadblockZombie.png'; // 路障僵尸图片路径
+            ConeheadZombie.image.src = './images/RoadblockZombie.png'; // 路障僵尸图片路径
         }
 
         this.img = ConeheadZombie.image;
@@ -159,7 +159,7 @@ class BucketheadZombie extends Zombie {
         // 加载铁桶僵尸图片（只加载一次）
         if (!BucketheadZombie.image) {
             BucketheadZombie.image = new Image();
-            BucketheadZombie.image.src = '../images/zombie/IronBucketZombie.png'; // 替换为实际路径
+            BucketheadZombie.image.src = './images/IronBucketZombie.png'; // 替换为实际路径
         }
 
         this.img = BucketheadZombie.image;
@@ -196,7 +196,7 @@ class LawnMower {
      */
     loadImage() {
         const img = new Image();
-        img.src = '../images/car.png'; // 图片路径，注意项目结构
+        img.src = './images/car.png'; // 图片路径，注意项目结构
         img.onerror = () => {
             console.error('Failed to load car image');
             this.imageFailed = true;

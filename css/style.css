@@ -4,7 +4,7 @@ body {
   /* 使用无衬线字体 */
   font-family: sans-serif;
   /* 垂直居中内容 */
-  background: url("../images/bg.png") no-repeat center center;
+  
   /* 让图片自适应容器大小 */
   /* background-color: #477a41; */
 }
@@ -241,9 +241,11 @@ canvas {
   /* 使元素紧凑排列 */
   align-items: center;
   /* 垂直居中内容 */
-  background: url("../images/shovel.png") no-repeat center center;
-  /* 让图片自适应容器大小 */
-  background-size: contain;
+}
+
+.tool-button image {
+  width: 100%;
+  height: 100%;
 }
 
 .tool-button.active {

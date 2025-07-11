@@ -16,7 +16,7 @@ class Pea {
     this.speed = 3.5;   // 移动速度
     this.radius = 8;  // 半径大小
     this.image = new Image();
-    this.image.src = '../images/pea/pea.png';
+    this.image.src = './images/pea.png';
     this.width = 32;   // 或根据图片大小设定
     this.height = 32;
   }
@@ -59,7 +59,7 @@ class IcePea {
     this.game = game;
     this.isIce = true; // 新增：标记为寒冰子弹
     this.image = new Image();
-    this.image.src = '../images/pea/icePea.png';
+    this.image.src = './images/icePea.png';
     this.width = 32;   // 或根据图片大小设定
     this.height = 32;
 
@@ -104,7 +104,7 @@ class Melon {
     this.height = 30;
 
     this.image = new Image();
-    this.image.src = '../images/pea/melon.png';
+    this.image.src = './images/melon.png';
 
     if (target) {
       this.targetX = target.x;

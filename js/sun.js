@@ -15,7 +15,7 @@ class Sun {
 
         // 新增图片相关属性
         this.img = new Image();
-        this.img.src = '../images/love.png'; // 图片路径
+        this.img.src = './images/love.png'; // 图片路径
         this.img.onload = () => {
             this.imageLoaded = true;
         };
