@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>小姜大战僵尸</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- 音乐控制按钮 -->
+  <div id="music-control">
+    🔊
+  </div>
+  <!-- 背景音乐 -->
+  <audio id="bg-music" loop>
+    <source src="./audio/home-page.mp3" type="audio/mpeg">
+    您的浏览器不支持音频播放
+  </audio>
+  <!-- 顶部植物选择工具栏 -->
+  <div id="top-bar-container">
+    <!-- 左上角阳光显示 -->
+    <div id="sun-display">💖 <span id="sun-value">50</span></div>
+    <div id="toolbar">
+      <!-- 坚果
+        按钮 -->
+      <div class="plant-button" data-plant="wallNut">
+        <img src="./images/botany/wallnut.png" />
+        💖50
+        <div class="cooldown-bar"></div>
+      </div>
+      <!-- 向日葵 -->
+      <div class="plant-button" data-plant="sunflower">
+        <img src="./images/botany/sunflower.png" />
+        💖50
+        <div class="cooldown-bar"></div>
+      </div>
+      <!-- 豌豆射手按钮 -->
+      <div class="plant-button" data-plant="peaShooter">
+        <img src="./images/botany/peashooter.png" />
+        💖100
+        <div class="cooldown-bar"></div>
+      </div>
+      <!-- 火爆辣椒按钮 -->
+      <div class="plant-button" data-plant="chili">
+        <img src="./images/botany/chili.png" />
+        💖150
+        <div class="cooldown-bar"></div>
+      </div>
+      <!-- 寒冰射手按钮 -->
+      <div class="plant-button" data-plant="icePeaShooter">
+        <img src="./images/botany/icePeaShooter.png" />
+        💖150
+        <div class="cooldown-bar"></div>
+      </div>
+      <!-- 西瓜投手按钮 -->
+      <div class="plant-button" data-plant="melonShooter">
+        <img src="./images/botany/icePeaShooter.png" />
+        💖225
+        <div class="cooldown-bar"></div>
+      </div>
+      <!-- 其他植物按钮... -->
+    </div>
+    <!-- 铁锹 -->
+    <div class="tool-button" data-plant="shovel" id="shovel-button"></div>
+  </div>
+
+  <div id="message-box"
+    style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%);background: rgba(255, 255, 0, 0.9); padding: 8px 16px; border-radius: 8px; font-weight: bold;display: none; z-index: 999;">
+    💖不足！
+  </div>
+
+
+  <!-- 游戏画布 -->
+  <canvas id="gameCanvas" width="1000" height="660"></canvas>
+
+  <!-- 引入JS文件，注意加载顺序 -->
+  <!-- 工具函数 -->
+  <script src="js/utils.js"></script>
+  <!-- 抛射物(子弹)相关类 -->
+  <script src="js/projectiles.js"></script>
+  <!-- 植物相关类 -->
+  <script src="js/plants.js"></script>
+  <!-- 随机爱心 -->
+  <script src="js/sun.js"></script>
+  <!-- 僵尸和小车相关类 -->
+  <script src="js/zombies.js"></script>
+  <!-- 游戏核心逻辑 -->
+  <script src="js/game.js"></script>
+  <!-- 主游戏入口 -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
