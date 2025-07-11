@@ -138,7 +138,7 @@ class ConeheadZombie extends Zombie {
         // 路障图片
         if (!ConeheadZombie.image) {
             ConeheadZombie.image = new Image();
-            ConeheadZombie.image.src = './images/zombie/RoadblockZombie.png'; // 路障僵尸图片路径
+            ConeheadZombie.image.src = '../images/zombie/RoadblockZombie.png'; // 路障僵尸图片路径
         }
 
         this.img = ConeheadZombie.image;
@@ -159,7 +159,7 @@ class BucketheadZombie extends Zombie {
         // 加载铁桶僵尸图片（只加载一次）
         if (!BucketheadZombie.image) {
             BucketheadZombie.image = new Image();
-            BucketheadZombie.image.src = './images/zombie/IronBucketZombie.png'; // 替换为实际路径
+            BucketheadZombie.image.src = '../images/zombie/IronBucketZombie.png'; // 替换为实际路径
         }
 
         this.img = BucketheadZombie.image;

@@ -33,7 +33,7 @@ class Game {
 
     // 游戏状态
     this.selectedPlantType = null; // 当前选中的植物类型
-    this.sun = 1000;           // 当前阳光数量
+    this.sun = 50;           // 当前阳光数量
 
     // DOM元素
     this.sunDisplay = document.getElementById('sun-value'); // 阳光显示元素

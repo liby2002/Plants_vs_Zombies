@@ -134,7 +134,7 @@ class Sunflower {
     // 加载图片
     if (!Sunflower.image) {
       Sunflower.image = new Image();
-      Sunflower.image.src = './images/botany/sunflower.png';
+      Sunflower.image.src = '../images/botany/sunflower.png';
     }
   }
 
@@ -186,7 +186,7 @@ class WallNut {
     this.height = game.CELL_HEIGHT;
 
     this.image = new Image();
-    this.image.src = './images/botany/wallnut.png'; // 请准备好该图片
+    this.image.src = '../images/botany/wallnut.png'; // 请准备好该图片
     // 植物构造函数中
     this.location = col * game.CELL_WIDTH + game.CELL_WIDTH / 2; // 每个格子中心
   }
@@ -239,7 +239,7 @@ class Chili {
 
     // 加载图片
     this.img = new Image();
-    this.img.src = './images/botany/chili.png';
+    this.img.src = '../images/botany/chili.png';
     this.img.onerror = () => {
       console.warn('🔥 火爆辣椒图片加载失败');
     };
@@ -309,7 +309,7 @@ class IcePeaShooter extends PeaShooter {
   constructor(row, col, game) {
     super(row, col, game); // 继承豌豆射手
     this.image = new Image();
-    this.image.src = './images/botany/icePeaShooter.png';
+    this.image.src = '../images/botany/icePeaShooter.png';
   }
 
   /**
@@ -345,7 +345,7 @@ class MelonShooter extends PeaShooter {
     // 加载西瓜投手图片
     if (!MelonShooter.image) {
       MelonShooter.image = new Image();
-      MelonShooter.image.src = './images/botany/melonShooter.png'; // 请准备对应图片
+      MelonShooter.image.src = '../images/botany/melonShooter.png'; // 请准备对应图片
       MelonShooter.image.onerror = () => {
         console.error('❌ 西瓜投手图片加载失败');
       };
